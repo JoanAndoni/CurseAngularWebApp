@@ -6,6 +6,8 @@ import { HttpModule } from '@angular/http';
 //Components
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home.component';
+import { ErrorComponent } from './components/error.component';
+
 
 //Routing
 import { routing, appRoutingProviders } from './app.routing';
@@ -13,7 +15,8 @@ import { routing, appRoutingProviders } from './app.routing';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
