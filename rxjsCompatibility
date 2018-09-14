@@ -1,0 +1,11 @@
+To solve the compatibility for the rxjs use the next line
+
+  $ sudo npm install rxjs@6 rxjs-compat@6 ..save
+
+For using the .map you have to transform it from
+
+  .map(res=>res.json());
+
+to
+
+  .pipe(map(res=>res.json()));
