@@ -55,6 +55,11 @@
   background: #E03137;
 }
 
+.activado {
+  text-decoration: none !important;
+  border-bottom: 4px solid yellow;
+}
+
 #main{
   margin-top: 30px;
   padding: 50px;
