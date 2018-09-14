@@ -55,13 +55,20 @@
   background: #E03137;
 }
 
+#main{
+  margin-top: 30px;
+  padding: 50px;
+  border-radius: 5px;
+
+}
+
+#main .btn {
+  margin-left: 5px;
+}
+
 #footer{
-  margin-top: 50px;
+  margin-top: 30px;
   padding-top: 10px;
   border-top: 1px solid #eee;
   color: gray;
-}
-
-#main{
-  margin-top: 10px;
 }
