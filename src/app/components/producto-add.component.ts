@@ -46,4 +46,12 @@ export class ProductoAddComponent{
       }
     );
   }
+
+  public filesToUpload;
+  public resultUpload;
+
+  fileChangeEvent(fileInput: any){
+    this.filesToUpload = <Array<File>>fileInput.target.files;
+    console.log(this.filesToUpload);
+  }
 }
