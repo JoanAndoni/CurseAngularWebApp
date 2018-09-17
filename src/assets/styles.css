@@ -81,3 +81,10 @@
 #form-producto{
   margin-top: 10px;
 }
+
+.label-danger{
+  color: white;
+  background-color: rgb(244, 83, 66, 0.7);
+  border-radius: 4px;
+  margin: 2px;
+}
