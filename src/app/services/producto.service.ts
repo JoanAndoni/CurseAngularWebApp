@@ -24,6 +24,12 @@ export class ProductoService{
     return this._http.get(this.url+'productos').pipe(map(res => res.json()));
   }
 
+  getProducto(id){
+    //Llamar a la peticion producto mas el id del producto del backend para poder recibir la informacion
+    //del metodo definido en el backend
+    return this._http.get(this.url+'productos/'+id).pipe(map(res => res.json()));
+  }
+
   //Recibir como parametro el objeto de producto
   addProducto(producto: Producto){
     //Convertir el objeto producto a un objeto de json

@@ -9,6 +9,8 @@ import { HomeComponent } from './components/home.component';
 import { ErrorComponent } from './components/error.component';
 import { ProductosListComponent } from './components/productos-list.component';
 import { ProductoAddComponent } from './components/producto-add.component';
+import { ProductoDetailComponent } from './components/producto-detail.component';
+import { ProductoEditComponent } from './components/producto-edit.component';
 
 //Routing
 import { routing, appRoutingProviders } from './app.routing';
@@ -19,6 +21,8 @@ import { routing, appRoutingProviders } from './app.routing';
     HomeComponent,
     ErrorComponent,
     ProductosListComponent,
+    ProductoDetailComponent,
+    ProductoEditComponent,
     ProductoAddComponent
   ],
   imports: [
