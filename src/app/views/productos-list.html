@@ -1,15 +1,30 @@
 <h3>{{titulo}}</h3>
-<hr>
+<hr/>
 
 <div *ngIf="!productos">
   Cargando lista de productos...
 </div>
 
 <div *ngIf="productos">
-  <ul>
-    <li *ngFor="let producto of productos">
-      <strong>{{producto.nombre}}</strong>
-      <p>{{producto.precio}}$</p>
-    </li>
-  </ul>
+  <div class="row">
+    <div *ngFor="let producto of productos" class="col-lg-3">
+      <div class="thumbnail">
+        <div *ngIf="producto.imagen" class="imagen_container">
+          <img src="http://localhost/AngularCurse/uploads/{{producto.imagen}}" class="producto_imagen"/>
+        </div>
+        <div *ngIf="!producto.imagen">
+          <div class="imagen_relleno"></div>
+        </div>
+        <div class="caption">
+          <h3>{{producto.nombre}}</h3>
+          <p>{{producto.precio}}$</p>
+          <p>
+            <a href="#" class="btn btn-sm btn-primary">Ver</a>
+            <a href="#" class="btn btn-sm btn-warning">Editar</a>
+            <a href="#" class="btn btn-sm btn-danger">Borrar</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

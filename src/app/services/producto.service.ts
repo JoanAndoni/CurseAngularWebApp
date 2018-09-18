@@ -55,7 +55,7 @@ export class ProductoService{
       var xhr = new XMLHttpRequest();
 
       //Loop para recorrer tdos los archivos que hay en el folder
-      for(var i; i < files.length; i++){
+      for(var i = 0; i < files.length; i++){
         //Formulario que vamos a enviar, uploads[] campo que recibimos en el
         //backend
         formData.append('uploads[]', files[i], files[i].name);
