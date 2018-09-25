@@ -8,7 +8,7 @@ import { GLOBAL } from './services/global';
 })
 
 export class AppComponent {
-  public title = 'Productos Angular 4';
+  public title = 'Administración de productos';
   public header_color: string;
 
   constructor(){

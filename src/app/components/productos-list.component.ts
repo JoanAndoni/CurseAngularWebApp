@@ -12,6 +12,7 @@ import { Producto } from '../models/producto';
 export class ProductosListComponent{
   public titulo: string;
   public productos: Producto[];
+  public confirmado;
 
   constructor(
     private _route: ActivatedRoute,
@@ -19,11 +20,15 @@ export class ProductosListComponent{
     private _productoService: ProductoService
   ){
     this.titulo = 'Listado de productos';
+    this.confirmado = null;
   }
 
   ngOnInit(){
     console.log('productos-list.ts cargado');
+    this.getProductos();
+  }
 
+  getProductos(){
     //Mandar a llamar la funcion de getProductos
     //la cual recibe un json que decodifica
     this._productoService.getProductos().subscribe(
@@ -39,6 +44,27 @@ export class ProductosListComponent{
         }
       },
       //Aqui no se recibio nada por lo cual se crea un error
+      error => {
+        console.log(<any>error);
+      }
+    );
+  }
+  
+  borrarConfirm(id){
+    this.confirmado = id;
+  }
+
+  cancelarConfirm(){
+    this.confirmado = null;
+  }
+
+  onDeleteProducto(id){
+    this._productoService.deleteProducto(id).subscribe(
+      response => {
+        if(response.code == 200){
+          this.getProductos();
+        }
+      },
       error => {
         console.log(<any>error);
       }

@@ -18,6 +18,7 @@ export class ProductoService{
     //el archivo global.ts
     this.url = GLOBAL.url;
   }
+
   getProductos(){
     //Llamar a la peticion productos del backend para poder recibir la informacion
     //del metodo definido en el backend
@@ -46,6 +47,20 @@ export class ProductoService{
     //Mandar a llamar el metodo del backend que creamos para poder trabajar con el
     //en este caso le estamos mandando un objeto para agregarlo a la base de datos
     return this._http.post(this.url+'productos', params, {headers: headers})
+                      .pipe(map(res => res.json()));
+  }
+
+  editProducto(id, producto: Producto){
+		let json = JSON.stringify(producto);
+		let params = "json="+json;
+		let headers = new Headers({'Content-Type':'application/x-www-form-urlencoded'});
+
+		return this._http.post(this.url+'update-producto/'+id, params, {headers: headers})
+						 .pipe(map(res => res.json()));
+	}
+
+  deleteProducto(id){
+    return this._http.get(this.url+'delete-producto/'+id)
                       .pipe(map(res => res.json()));
   }
 

@@ -35,7 +35,7 @@ export class ProductoAddComponent{
   onSubmit(){
     console.log(this.producto);
 
-    if (this.filesToUpload.length >= 1){
+    if (this.filesToUpload &&  this.filesToUpload.length >= 1){
       //Funcion para subir el archivo que se desea
       //Construye la url que crea la URL del archivo a subir, parametros vacios
       //indicar que este archivo se subira
